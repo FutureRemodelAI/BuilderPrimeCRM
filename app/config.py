@@ -5,7 +5,7 @@ load_dotenv()
 
 class Config:
     HOST = os.getenv('FLASK_HOST', '0.0.0.0')
-    PORT = int(os.getenv('FLASK_PORT', '5050'))
+    PORT = os.getenv('FLASK_PORT', '5050')
     FLASK_ENV = os.getenv("FLASK_ENV", "development")
 
     DB_USER = os.getenv('DB_USER', 'postgres')
@@ -25,8 +25,8 @@ class Config:
 
     CACHE_TYPE = "RedisCache"
     CACHE_REDIS_HOST = os.getenv("REDIS_HOST", "redis")
-    CACHE_REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
-    CACHE_DEFAULT_TIMEOUT = int(os.getenv("CACHE_DEFAULT_TIMEOUT", 300))
+    CACHE_REDIS_PORT = os.getenv("REDIS_PORT", 6379)
+    CACHE_DEFAULT_TIMEOUT = os.getenv("CACHE_DEFAULT_TIMEOUT", 300)
     
     RATELIMIT_HEADERS_ENABLED = True
     DEFAULT_RATELIMIT = "5 per minute"
